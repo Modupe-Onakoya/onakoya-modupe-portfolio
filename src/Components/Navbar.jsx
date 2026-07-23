@@ -1,17 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { assets } from '../assets/assets'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const [isBlur, setIsBlur] = useState(false)
+
+
+    // if (window.scrollY > 10) {
+    //     setIsBlur(true)
+    // }
+
+    // useEffect(() => {
+    //     if (isOpen) {
+    //         document.body.style.overflow = "hidden";
+    //     } else {
+    //         document.body.style.overflow = "auto";
+    //     }
+
+    //     return () => {
+    //         document.body.style.overflow = "auto";
+    //     };
+    // }, [isOpen]);
+    useEffect(() => {
+        function handleScroll() {
+            setIsBlur(window.scrollY > 50);
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
     return (
-        <div className='flex justify-center mx-auto z-100'>
-            <nav className=" bg-[#0B0D10] fixed flex items-center border  max-md:justify-between border-slate-700 px-6 py-4 rounded-full text-white text-sm w-fit mx-auto ">
+        <div className={`flex justify-center mx-auto z-100 `}>
+            <nav className={` bg-[#0B0D10] fixed flex items-center border blur-75  max-md:justify-between border-slate-700
+                 px-6 py-4 rounded-full text-white text-sm w-fit mx-auto`}>
 
                 <div className="hidden md:flex items-center gap-6 ml-7">
                     <a href="#" className="relative overflow-hidden h-6 group">
-                        <span className="block group-hover:-translate-y-full transition-transform duration-300 text-[#E8A33D]">OM</span>
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300 text-[#E8A33D]">Home</span>
                         <span
-                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 text-[#E8A33D]">OM</span>
+                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 text-[#E8A33D]">Home</span>
                     </a>
                     <a href="#about" className="relative overflow-hidden h-6 group">
                         <span className="block group-hover:-translate-y-full transition-transform duration-300">About</span>
@@ -43,6 +71,7 @@ const Navbar = () => {
                         </a>
                     </button>
                 </div>
+                {/* mobile */}
                 <div className='md:hidden  flex space-x-30'>
                     <button id="menuToggle" className="md:hidden text-gray-600  " onClick={() => setIsOpen(!isOpen)}>
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
@@ -51,27 +80,33 @@ const Navbar = () => {
                         </svg>
                     </button>
                     <button
-                        className="bg-white my-auto hover:shadow-[0px_0px_30px_14px] md:hidden shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-2 py-1 rounded-lg text-sm font-medium hover:bg-slate-100 transition duration-300">
-                        Lets Work
+                        className=" bg-white my-auto hover:shadow-[0px_0px_30px_14px] md:hidden shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-2 py-1 rounded-lg text-sm font-medium hover:bg-slate-100 transition duration-300">
+                        <a href="mailto:onakoyamodupe0@gmail.com">
+                            Lets work
+                        </a>
                     </button>
                 </div>
 
 
                 <div id="mobileMenu" className={` ${isOpen ? "translate-y-0" : "-translate-y-full"} fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500`}>
                     <img src={assets.closeIcon} alt="" onClick={() => setIsOpen(!isOpen)} />
-                    <a className="hover:text-indigo-600" href="#">
+                    <a className="hover:text-indigo-600 " href="#" onClick={() => setIsOpen(!isOpen)}>
+                        Home
+                    </a>
+                    <a className="hover:text-indigo-600" href="#about" onClick={() => setIsOpen(!isOpen)}>
+                        About
+                    </a>
+                    <a className="hover:text-indigo-600" href="#projects" onClick={() => setIsOpen(!isOpen)}>
                         Projects
                     </a>
-                    <a className="hover:text-indigo-600" href="#">
-                        Resume
-                    </a>
-                    <a className="hover:text-indigo-600" href="#">
-                        About
+                    <a className="hover:text-indigo-600" href="#contact" onClick={() => setIsOpen(!isOpen)}>
+                        Contact
                     </a>
 
                     <button
-                        className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
-                        Contact
+                        className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition ">
+                        <a href="/Onakoya1.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+
                     </button>
 
                 </div>
