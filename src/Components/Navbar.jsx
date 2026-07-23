@@ -9,19 +9,24 @@ const Navbar = () => {
 
                 <div className="hidden md:flex items-center gap-6 ml-7">
                     <a href="#" className="relative overflow-hidden h-6 group">
-                        <span className="block group-hover:-translate-y-full transition-transform duration-300">Projects</span>
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300 text-[#E8A33D]">OM</span>
+                        <span
+                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 text-[#E8A33D]">OM</span>
+                    </a>
+                    <a href="#about" className="relative overflow-hidden h-6 group">
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300">About</span>
                         <span
                             className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">About</span>
                     </a>
-                    <a href="#" className="relative overflow-hidden h-6 group">
-                        <span className="block group-hover:-translate-y-full transition-transform duration-300">Resume</span>
+                    <a href="#projects" className="relative overflow-hidden h-6 group">
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300">Project</span>
                         <span
-                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Resume</span>
+                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Project</span>
                     </a>
-                    <a href="#" className="relative overflow-hidden h-6 group">
-                        <span className="block group-hover:-translate-y-full transition-transform duration-300">About</span>
+                    <a href="#contact" className="relative overflow-hidden h-6 group">
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300">Contact</span>
                         <span
-                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Pricing</span>
+                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Contact</span>
                     </a>
 
                 </div>
@@ -29,11 +34,13 @@ const Navbar = () => {
                 <div className="hidden ml-14 md:flex items-center gap-4">
                     <button
                         className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
-                        Contact
+                        <a href="/Onakoya1.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                     </button>
                     <button
                         className="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
-                        Lets work
+                        <a href="mailto:onakoyamodupe0@gmail.com">
+                            Lets work
+                        </a>
                     </button>
                 </div>
                 <div className='md:hidden  flex space-x-30'>

@@ -2,7 +2,7 @@ import React from 'react'
 import { assets } from '../assets/assets'
 const Contact = () => {
     return (
-        <div className="py-24 border-t border-[#1F242B]  mx-auto px-8 bg-[#0B0D10]">
+        <div className="py-24 border-t border-[#1F242B]  mx-auto px-8 bg-[#0B0D10]" id='contact'>
 
             <h2 className='text-white text-[13px] text-[#6E7681] mb-12 flex items-baseline gap-3'>
                 contact</h2>
@@ -30,7 +30,7 @@ const Contact = () => {
                     <img alt='' src={assets.twitter} className='xl:w-6 xl:h-6 w-4 h-4' />
 
                 </a>
-
+                4
             </div>
 
         </div>

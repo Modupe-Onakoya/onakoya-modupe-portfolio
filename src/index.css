@@ -1,6 +1,7 @@
-    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
     @import "tailwindcss";
+    @custom-variant hover (&:hover);
+    @custom-variant group-hover (.group:hover &);
 
-    * {
-        font-family: "Geist", sans-serif;
+    html {
+        scroll-behavior: smooth;
     }
