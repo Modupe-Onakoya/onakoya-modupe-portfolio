@@ -1,0 +1,78 @@
+import React, { useState } from 'react'
+import { assets } from '../assets/assets'
+
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false)
+    return (
+        <div className='flex justify-center mx-auto z-100'>
+            <nav className=" bg-[#0B0D10] fixed flex items-center border  max-md:justify-between border-slate-700 px-6 py-4 rounded-full text-white text-sm w-fit mx-auto ">
+
+                <div className="hidden md:flex items-center gap-6 ml-7">
+                    <a href="#" className="relative overflow-hidden h-6 group">
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300">Projects</span>
+                        <span
+                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">About</span>
+                    </a>
+                    <a href="#" className="relative overflow-hidden h-6 group">
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300">Resume</span>
+                        <span
+                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Resume</span>
+                    </a>
+                    <a href="#" className="relative overflow-hidden h-6 group">
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300">About</span>
+                        <span
+                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Pricing</span>
+                    </a>
+
+                </div>
+
+                <div className="hidden ml-14 md:flex items-center gap-4">
+                    <button
+                        className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+                        Contact
+                    </button>
+                    <button
+                        className="bg-white hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
+                        Lets work
+                    </button>
+                </div>
+                <div className='md:hidden  flex space-x-30'>
+                    <button id="menuToggle" className="md:hidden text-gray-600  " onClick={() => setIsOpen(!isOpen)}>
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <button
+                        className="bg-white my-auto hover:shadow-[0px_0px_30px_14px] md:hidden shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-2 py-1 rounded-lg text-sm font-medium hover:bg-slate-100 transition duration-300">
+                        Lets Work
+                    </button>
+                </div>
+
+
+                <div id="mobileMenu" className={` ${isOpen ? "translate-y-0" : "-translate-y-full"} fixed top-0 left-0 w-full h-screen bg-white text-base flex flex-col md:hidden items-center justify-center gap-6 font-medium text-gray-800 transition-all duration-500`}>
+                    <img src={assets.closeIcon} alt="" onClick={() => setIsOpen(!isOpen)} />
+                    <a className="hover:text-indigo-600" href="#">
+                        Projects
+                    </a>
+                    <a className="hover:text-indigo-600" href="#">
+                        Resume
+                    </a>
+                    <a className="hover:text-indigo-600" href="#">
+                        About
+                    </a>
+
+                    <button
+                        className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+                        Contact
+                    </button>
+
+                </div>
+            </nav >
+        </div>
+
+
+    )
+}
+
+export default Navbar
