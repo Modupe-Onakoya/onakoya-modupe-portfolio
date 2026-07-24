@@ -4,23 +4,20 @@ import { assets } from '../assets/assets'
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isBlur, setIsBlur] = useState(false)
+    const [isScroll, setIsScroll] = useState(false)
 
 
-    // if (window.scrollY > 10) {
-    //     setIsBlur(true)
-    // }
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
 
-    // useEffect(() => {
-    //     if (isOpen) {
-    //         document.body.style.overflow = "hidden";
-    //     } else {
-    //         document.body.style.overflow = "auto";
-    //     }
-
-    //     return () => {
-    //         document.body.style.overflow = "auto";
-    //     };
-    // }, [isOpen]);
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [isOpen]);
     useEffect(() => {
         function handleScroll() {
             setIsBlur(window.scrollY > 50);
@@ -29,13 +26,25 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    useEffect(() => {
+        function scroll() {
+            if (scrollY > 400) {
+                setIsScroll(true)
+            }
+            else {
+                setIsScroll(false)
+            }
+        }
+        window.addEventListener("scroll", scroll);
+        return () => window.removeEventListener("scroll", scroll);
+    }, [])
 
     return (
         <div className={`flex justify-center mx-auto z-100 `}>
             <nav className={` bg-[#0B0D10] fixed flex items-center border blur-75  max-md:justify-between border-slate-700
-                 px-6 py-4 rounded-full text-white text-sm w-fit mx-auto`}>
+                 px-6 py-4 rounded-full text-white text-sm w-fit mx-auto z-100`}>
 
-                <div className="hidden md:flex items-center gap-6 ml-7">
+                <div className="hidden md:flex items-center gap-6 ml-7 ">
                     <a href="#" className="relative overflow-hidden h-6 group">
                         <span className="block group-hover:-translate-y-full transition-transform duration-300 text-[#E8A33D]">Home</span>
                         <span
@@ -111,6 +120,11 @@ const Navbar = () => {
 
                 </div>
             </nav >
+            {isScroll ?
+                <h2 className='fixed bottom-0 right-0 z-100 text-white '> <a href='#'>moo</a> </h2>
+                : null
+
+            }
         </div>
 
 

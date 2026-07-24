@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import HeroText from './HeroText'
+import Links from './Links'
 const Hero = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
     const dashboardRef = useRef(null)
@@ -30,7 +31,7 @@ const Hero = () => {
 
     return (
 
-        <header className='flex flex-col items-center px-4 text-white'>
+        <header className='flex flex-col items-center px-4 text-white bg-[#0B0D10]'>
 
 
             <div className="flex flex-wrap items-center justify-center gap-2 px-2 py-1 mt-30 rounded-full border border-zinc-200">
@@ -45,18 +46,19 @@ const Hero = () => {
             </div>
             {/* <h1 className='text-5xl md:text-[70px]/18 text-center max-w-[1000px] mt-4 bg-clip-text leading-tight font-medium'>A Frontend Developer </h1> */}
             <HeroText />
-            <p className="text-[#6E7681] text-center sm:max-w-[500px] lg:pt-3 text-[13px] sm:text-base max-w-[287px]">
+            <p className="text-[#6E7681] text-center sm:max-w-[500px] lg:pt-3 text-[13px] sm:text-base max-w-[300px]">
                 I build modern, responsive web interfaces with React, Next.js, TypeScript, and Tailwind CSS, focused on creating clean, scalable, and user-friendly experiences.
             </p>
 
-            <div className='flex gap-4 mt-9'>
-                <button className="bg-zinc-950 hover:bg-zinc-800 text-white text-sm px-6 py-3 rounded-2xl transition cursor-pointer">
+            <div className='flex gap-4 mt-9 mb-3'>
+                <button className="bg-[#E8A33D] hover:bg-zinc-800 text-white text-sm sm:px-6 sm:py-3  py-1 px-3 rounded-lg sm:rounded-2xl transition cursor-pointer">
                     <a href="#projects"> View Projects</a>
                 </button>
-                <button className="bg-white text-black border border-zinc-200 hover:border-zinc-300 text-sm px-5 py-3 rounded-2xl transition cursor-pointer">
+                <button className="bg-white text-black border  hover:bg-zinc-800 hover:text-white border-zinc-200 hover:border-zinc-300 text-sm rounded-lg sm:px-5 sm:py-3 px-3 py-1 sm:rounded-2xl transition cursor-pointer">
                     <a href="#contact"> Get in touch</a>
                 </button>
             </div>
+            <Links />
 
 
         </header>

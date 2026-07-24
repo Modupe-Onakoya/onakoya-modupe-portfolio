@@ -24,8 +24,8 @@ const HeroText = () => {
                     initial={{ opacity: 0, x: directions[index] * -80 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: directions[index] * 80 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="sm:text-[clamp(36px,7vw,92px)] text-[29px] max-md:py-3 "
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="sm:text-[clamp(36px,7vw,92px)] text-[29px] max-md:py-5 max-sm:max-w-[150px] "
                 >
                     {phrases[index]}
                 </motion.h1>

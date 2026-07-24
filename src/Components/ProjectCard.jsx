@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
 
                 {/* Col 3 — desc */}
                 <div className='flex flex-col gap-2'>
-                    <h3 className="font-serif font-medium text-[24px] leading-tight transition-colors duration-200 group-hover:text-[#FF6B4A]">
+                    <h3 className=" font-medium text-[24px] leading-tight text-[#FF6B4A] transition-colors duration-200 group-hover:text-[#FF6B4A]">
                         {project.title}
                     </h3>
                     <p className="text-[#6E7681] text-[15px] leading-relaxed flex-1">

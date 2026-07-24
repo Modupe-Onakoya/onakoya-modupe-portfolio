@@ -10,7 +10,7 @@ import Projects from "./Components/Projects"
 function App() {
 
   return (
-    <div className="bg-[#0B0D10] h-screen pt-10">
+    <div className="bg-[#0B0D10] py-5 px-2 sm:px-10">
       <Navbar />
       <Hero />
       <About />
