@@ -11,7 +11,8 @@ import email from './email.png'
 import twitter from './twitter.png'
 import close_white from './close-white.png'
 import hotel_site from './hotel-site.png'
-
+import whatsapp from './whatsapp.png'
+import copyright from './copyright.png'
 
 
 
@@ -27,7 +28,7 @@ export const assets = {
     close_black,
     profile,
     download_icon,
-    linkedin, email, github, twitter, close_white, hotel_site
+    linkedin, email, github, twitter, close_white, hotel_site, whatsapp, copyright
 }
 
 export const projects = [
@@ -35,7 +36,7 @@ export const projects = [
         index: "01",
         year: "2026",
         role: "Personal project",
-        title: "Hotel Booking S6ite",
+        title: "Hotel Booking Site",
         desc: "An internal analytics dashboard with real-time filtering and virtualized tables for large datasets.",
         tags: ["React", "TypeScript", "Tailwind"],
         href: "https://hotel-booking-site-beta.vercel.app/",

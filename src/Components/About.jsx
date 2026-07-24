@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { div } from 'motion/react-client';
 
 const About = () => {
 
@@ -25,58 +26,60 @@ const About = () => {
 
 
     return (
-        <section
-            id="about"
-            className="py-24 border-t border-[#1F242B]  mx-auto mt-20 bg-[#0B0D10] w-full"
-        >
-            {/* Section label */}
-            <p className=" text-[15px] text-[#6E7681] mb-12 flex items-baseline gap-3">
-                <span className="text-[#5C84B5]">About Me</span>
-            </p>
+        <div className='px-8 sm:px-15 bg-[#0B0D10]'>
+            <section
+                id="about"
+                className="py-24 border-t border-[#1F242B]  mx-auto mt-20  w-full "
+            >
+                {/* Section label */}
+                <p className=" text-[15px] text-[#6E7681] mb-12 flex items-baseline gap-3">
+                    <span className="text-[#5C84B5]">About Me</span>
+                </p>
 
-            {/* Three column grid */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr_1fr] gap-8 md:gap-12 items-start">
+                {/* Three column grid */}
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr_1fr] gap-8 md:gap-12 items-start">
 
-                {/* Avatar */}
-                <div className=" w-full max-w-[220px] md:max-w-none aspect-[4/5] rounded-md overflow-hidden border border-[#1F242B] bg-[#12151A] group">
-                    <img
-                        src={assets.profile}
-                        alt="Profile photo placeholder — swap for your own"
-                        className="w-full h-full object-cover grayscale-[15%] contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
-                    />
+                    {/* Avatar */}
+                    <div className=" w-full max-w-[220px] md:max-w-none aspect-[4/5] rounded-md overflow-hidden border border-[#1F242B] bg-[#12151A] group">
+                        <img
+                            src={assets.profile}
+                            alt="Profile photo placeholder — swap for your own"
+                            className="w-full h-full object-cover grayscale-[15%] contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
+                        />
+
+                    </div>
+
+                    {/* Bio text */}
+                    <div>
+                        {profile.aboutParagraphs.map((p, i) => (
+                            <p key={i} className="sm:text-lg text-[#EDEFF2] mb-5 leading-relaxed">
+                                {p}
+                            </p>
+                        ))}
+                        {profile.aboutParagraphsMuted.map((p, i) => (
+                            <p key={i} className="text-base text-[#6E7681] leading-relaxed">
+                                {p}
+                            </p>
+                        ))}
+                    </div>
+
+                    {/* Stack list */}
+                    <div className="flex flex-col">
+                        {profile.stack.map((row, i) => (
+                            <div
+                                key={row.role}
+                                className={`flex justify-between py-3.5 border-b border-[#1F242B] font-mono text-[13px] ${i === 0 ? "border-t border-[#1F242B]" : ""
+                                    }`}
+                            >
+                                <span className="text-[#6E7681]">{row.role}</span>
+                                <span className="text-[#EDEFF2] text-right">{row.tools}</span>
+                            </div>
+                        ))}
+                    </div>
 
                 </div>
-
-                {/* Bio text */}
-                <div>
-                    {profile.aboutParagraphs.map((p, i) => (
-                        <p key={i} className="sm:text-lg text-[#EDEFF2] mb-5 leading-relaxed">
-                            {p}
-                        </p>
-                    ))}
-                    {profile.aboutParagraphsMuted.map((p, i) => (
-                        <p key={i} className="text-base text-[#6E7681] leading-relaxed">
-                            {p}
-                        </p>
-                    ))}
-                </div>
-
-                {/* Stack list */}
-                <div className="flex flex-col">
-                    {profile.stack.map((row, i) => (
-                        <div
-                            key={row.role}
-                            className={`flex justify-between py-3.5 border-b border-[#1F242B] font-mono text-[13px] ${i === 0 ? "border-t border-[#1F242B]" : ""
-                                }`}
-                        >
-                            <span className="text-[#6E7681]">{row.role}</span>
-                            <span className="text-[#EDEFF2] text-right">{row.tools}</span>
-                        </div>
-                    ))}
-                </div>
-
-            </div>
-        </section>
+            </section>
+        </div>
     );
 }
 

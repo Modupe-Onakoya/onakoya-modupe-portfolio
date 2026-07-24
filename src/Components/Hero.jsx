@@ -31,16 +31,16 @@ const Hero = () => {
 
     return (
 
-        <header className='flex flex-col items-center px-4 text-white bg-[#0B0D10]'>
+        <header className='flex flex-col items-center px-2 text-white bg-[#0B0D10]'>
 
 
             <div className="flex flex-wrap items-center justify-center gap-2 px-2 py-1 mt-30 rounded-full border border-zinc-200">
                 <div className='flex items-center gap-2 border border-zinc-200 rounded-full px-2 py-1.5'>
                     <div className="relative flex size-3.5 items-center justify-center">
-                        <span className="absolute inline-flex h-full w-full rounded-full bg-[#E8A33D] opacity-75 animate-ping duration-300"></span>
-                        <span className="relative inline-flex size-2 rounded-full bg-[#E8A33D]"></span>
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-[#FF6B4A] opacity-75 animate-ping duration-300"></span>
+                        <span className="relative inline-flex size-2 rounded-full bg-[#FF6B4A]"></span>
                     </div>
-                    <p className='text-xs text-[#E8A33D]'>Live now</p>
+                    <p className='text-xs text-[#FF6B4A]'>Live now</p>
                 </div>
                 <p className="text-xs text-white">Available for work</p>
             </div>
@@ -51,10 +51,10 @@ const Hero = () => {
             </p>
 
             <div className='flex gap-4 mt-9 mb-3'>
-                <button className="bg-[#E8A33D] hover:bg-zinc-800 text-white text-sm sm:px-6 sm:py-3  py-1 px-3 rounded-lg sm:rounded-2xl transition cursor-pointer">
+                <button className="bg-[#FF6B4A]  hover:bg-[#6E7681]  text-white text-sm sm:px-6 sm:py-3  py-2 px-4 rounded-lg sm:rounded-2xl transition cursor-pointer">
                     <a href="#projects"> View Projects</a>
                 </button>
-                <button className="bg-white text-black border  hover:bg-zinc-800 hover:text-white border-zinc-200 hover:border-zinc-300 text-sm rounded-lg sm:px-5 sm:py-3 px-3 py-1 sm:rounded-2xl transition cursor-pointer">
+                <button className="bg-white text-black border  hover:bg-[#6E7681] hover:text-white border-zinc-200 hover:border-none text-sm rounded-lg sm:px-5 sm:py-3 px-4 py-2 sm:rounded-2xl transition cursor-pointer">
                     <a href="#contact"> Get in touch</a>
                 </button>
             </div>
