@@ -7,6 +7,7 @@ const Navbar = () => {
     const [isBlur, setIsBlur] = useState(false)
     const [isScroll, setIsScroll] = useState(false)
 
+
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -48,7 +49,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 3, ease: "easeInOut" }}
-                className={` bg-[#0B0D10] fixed  flex items-center border blur-75  max-md:justify-between border-slate-700
+                className={` bg-[#0B0D10] fixed flex items-center border blur-75  max-md:justify-between border-slate-700
                  px-6 py-4 rounded-full text-white text-sm w-fit mx-auto z-100`}>
 
                 <div className="hidden md:flex items-center gap-6 ml-7 ">
