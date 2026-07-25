@@ -4,9 +4,14 @@ import { assets } from '../assets/assets'
 import { motion } from 'motion/react'
 
 const Footer = () => {
-    return (
-        <div
 
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
 
             className='py-4 flex flex-col justify-between border-t  mx-auto sm:px-15 px-8 bg-[#111418]'>
             <div className='flex flex-col sm:flex-row gap-3 py-15 justify-between items-center '>
@@ -27,7 +32,7 @@ const Footer = () => {
 
                 </div>
 
-                <div className='flex gap-5 pt-5 items-center'>
+                <div className='flex gap-3 pt-5 items-center'>
                     <a
                         href="https://wa.me/2348012345678"
                         target="_blank"
@@ -68,7 +73,7 @@ const Footer = () => {
                 <p className='text-[12px] text-white'>Built with react js & tailswind css</p>
             </div>
 
-        </div >
+        </motion.div >
     )
 }
 

@@ -7,7 +7,6 @@ const Navbar = () => {
     const [isBlur, setIsBlur] = useState(false)
     const [isScroll, setIsScroll] = useState(false)
 
-
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -49,7 +48,7 @@ const Navbar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 3, ease: "easeInOut" }}
-                className={` bg-[#0B0D10] fixed flex items-center border blur-75  max-md:justify-between border-slate-700
+                className={` bg-[#0B0D10] fixed  flex items-center border blur-75  max-md:justify-between border-slate-700
                  px-6 py-4 rounded-full text-white text-sm w-fit mx-auto z-100`}>
 
                 <div className="hidden md:flex items-center gap-6 ml-7 ">
@@ -128,10 +127,8 @@ const Navbar = () => {
 
                 </div>
             </motion.nav >
-            {isScroll ?
-                <h2 className='fixed bottom-0 right-0 z-100 text-white '> <a href='#'>moo</a> </h2>
-                : null
-
+            {isScroll &&
+                <a href='#'><img src={assets.up_arrow} className='w-10 h-10 rounded-full bg-[#FF6B4A] p-3 fixed bottom-5 right-5 z-100  ' /></a>
             }
         </div>
 

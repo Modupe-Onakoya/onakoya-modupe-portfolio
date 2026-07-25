@@ -25,7 +25,7 @@ const HeroText = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: directions[index] * 80 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="text-[clamp(36px,7vw,92px)] max-md:py-5 text-center  "
+                    className="text-[clamp(36px,7vw,92px)] max-md:py-10 text-center  "
                 >
                     {phrases[index] === "I'm Onakoya Modupe"
                         ? <>I'm  <br className=" block sm:hidden" />Onakoya Modupe</>

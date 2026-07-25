@@ -26,8 +26,8 @@ const About = () => {
 
 
     return (
-        <motion.div
-            whileInView={{ scale: 1 }}
+        <div
+
             className='px-8 sm:px-15 bg-[#0B0D10]'>
             <section
                 id="about"
@@ -43,7 +43,11 @@ const About = () => {
 
                     {/* Avatar */}
                     <div className=" w-full max-w-[220px] md:max-w-none aspect-[4/5] rounded-md overflow-hidden border border-[#1F242B] bg-[#12151A] group">
-                        <img
+                        <motion.img
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                            viewport={{ once: true }}
                             src={assets.profile}
                             alt="Profile photo placeholder — swap for your own"
                             className="w-full h-full object-cover grayscale-[15%] contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03]"
@@ -54,19 +58,35 @@ const About = () => {
                     {/* Bio text */}
                     <div>
                         {profile.aboutParagraphs.map((p, i) => (
-                            <p key={i} className="sm:text-lg text-[#EDEFF2] mb-5 leading-relaxed">
+                            <motion.p
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: true }}
+
+                                key={i} className="sm:text-lg text-[#EDEFF2] mb-5 leading-relaxed">
                                 {p}
-                            </p>
+                            </motion.p>
                         ))}
                         {profile.aboutParagraphsMuted.map((p, i) => (
-                            <p key={i} className="text-base text-[#6E7681] leading-relaxed">
+                            <motion.p
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: true }}
+                                key={i} className="text-base text-[#6E7681] leading-relaxed">
                                 {p}
-                            </p>
+                            </motion.p>
                         ))}
                     </div>
 
                     {/* Stack list */}
-                    <div className="flex flex-col">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col">
                         {profile.stack.map((row, i) => (
                             <div
                                 key={row.role}
@@ -77,11 +97,11 @@ const About = () => {
                                 <span className="text-[#EDEFF2] text-right">{row.tools}</span>
                             </div>
                         ))}
-                    </div>
+                    </motion.div>
 
                 </div>
             </section>
-        </motion.div>
+        </div>
     );
 }
 
