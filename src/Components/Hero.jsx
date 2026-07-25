@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import HeroText from './HeroText'
 import Links from './Links'
+import { motion } from 'motion/react'
 const Hero = () => {
     const [mobileOpen, setMobileOpen] = useState(false)
     const dashboardRef = useRef(null)
@@ -31,7 +32,11 @@ const Hero = () => {
 
     return (
 
-        <header className='flex flex-col items-center px-2 text-white bg-[#0B0D10]'>
+        <motion.header
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3, ease: "easeInOut" }}
+            className='flex flex-col items-center px-2 text-white bg-[#0B0D10] ' >
 
 
             <div className="flex flex-wrap items-center justify-center gap-2 px-2 py-1 mt-30 rounded-full border border-zinc-200">
@@ -61,7 +66,7 @@ const Hero = () => {
             <Links />
 
 
-        </header>
+        </motion.header >
     )
 }
 

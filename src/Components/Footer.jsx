@@ -1,10 +1,14 @@
 import React from 'react'
 import Links from './Links'
 import { assets } from '../assets/assets'
+import { motion } from 'motion/react'
 
 const Footer = () => {
     return (
-        <div className='py-4 flex flex-col justify-between border-t  mx-auto sm:px-15 px-8 bg-[#111418]'>
+        <div
+
+
+            className='py-4 flex flex-col justify-between border-t  mx-auto sm:px-15 px-8 bg-[#111418]'>
             <div className='flex flex-col sm:flex-row gap-3 py-15 justify-between items-center '>
                 <div className='max-sm:text-center'>
                     <p className=' text-[#FF6B4A] '>

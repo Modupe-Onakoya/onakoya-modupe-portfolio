@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const Links = () => {
     return (
-        <div className='flex gap-5 pt-5 '>
+        <div className='flex gap-2 pt-5 '>
             <a
                 href="https://wa.me/2348012345678"
                 target="_blank"

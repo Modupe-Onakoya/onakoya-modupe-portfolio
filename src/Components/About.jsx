@@ -1,7 +1,7 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import { div } from 'motion/react-client';
-
+import { motion } from 'motion/react'
 const About = () => {
 
 
@@ -26,7 +26,9 @@ const About = () => {
 
 
     return (
-        <div className='px-8 sm:px-15 bg-[#0B0D10]'>
+        <motion.div
+            whileInView={{ scale: 1 }}
+            className='px-8 sm:px-15 bg-[#0B0D10]'>
             <section
                 id="about"
                 className="py-24 border-t border-[#1F242B]  mx-auto mt-20  w-full "
@@ -79,7 +81,7 @@ const About = () => {
 
                 </div>
             </section>
-        </div>
+        </motion.div>
     );
 }
 

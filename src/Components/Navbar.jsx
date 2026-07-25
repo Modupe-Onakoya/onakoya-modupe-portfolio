@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { assets } from '../assets/assets'
+import { motion } from 'motion/react'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -19,6 +20,7 @@ const Navbar = () => {
         };
     }, [isOpen]);
     useEffect(() => {
+
         function handleScroll() {
             setIsBlur(window.scrollY > 50);
         }
@@ -40,8 +42,14 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className={`flex justify-center mx-auto z-100 `}>
-            <nav className={` bg-[#0B0D10] fixed flex items-center border blur-75  max-md:justify-between border-slate-700
+        <div
+
+            className={`flex justify-center mx-auto z-100 `} >
+            <motion.nav
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 3, ease: "easeInOut" }}
+                className={` bg-[#0B0D10] fixed flex items-center border blur-75  max-md:justify-between border-slate-700
                  px-6 py-4 rounded-full text-white text-sm w-fit mx-auto z-100`}>
 
                 <div className="hidden md:flex items-center gap-6 ml-7 ">
@@ -119,7 +127,7 @@ const Navbar = () => {
                     </button>
 
                 </div>
-            </nav >
+            </motion.nav >
             {isScroll ?
                 <h2 className='fixed bottom-0 right-0 z-100 text-white '> <a href='#'>moo</a> </h2>
                 : null
