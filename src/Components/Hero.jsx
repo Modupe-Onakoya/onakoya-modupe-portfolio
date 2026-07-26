@@ -49,10 +49,10 @@ const Hero = () => {
                 </div>
                 <p className="text-xs ">Available for work</p>
             </div>
-            <div className='max-sm:py-5'>
+            <div className=''>
 
                 {/* <h1 className='text-5xl md:text-[70px]/18 text-center max-w-[1000px] mt-4 bg-clip-text leading-tight font-medium'>A Frontend Developer </h1> */}
-                <p className=' max-sm:text-[30px] text-[clamp(36px,7vw,92px)]  leading-none sm:pt-7 text-[#6E7681]'>Hi there,</p>
+                <p className=' max-sm:text-[30px] text-[clamp(36px,7vw,92px)] text-center  leading-none sm:pt-7 text-[#6E7681]'>Hi there,</p>
                 <HeroText />
             </div>
 
