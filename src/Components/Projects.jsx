@@ -11,10 +11,10 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className='px-8 sm:px-15'>
+            className='px-8 sm:px-15 bg-white dark:bg-[#0B0D10]'>
             <section
                 id="projects"
-                className="py-24 border-t border-[#1F242B]  mx-auto  bg-[#0B0D10]"
+                className="py-24 border-t border-[#1F242B]  mx-auto  "
             >
                 <SectionLabel />
                 {projects.map((project) => (

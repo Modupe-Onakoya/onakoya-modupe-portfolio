@@ -24,7 +24,7 @@ const ProjectCard = ({ project }) => {
                     <h3 className=" font-medium text-[24px] leading-tight text-[#FF6B4A] transition-colors duration-200 group-hover:text-[#FF6B4A]">
                         {project.title}
                     </h3>
-                    <p className="text-[#6E7681] text-[15px] leading-relaxed flex-1">
+                    <p className="dark:text-[#6E7681] text-black text-[15px] leading-relaxed flex-1">
                         {project.desc}
                     </p>
                     <Tags tags={project.tags} />
@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
                         href={project.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="font-mono text-[12px] text-[#EDEFF2] border border-[#1F242B] px-4 py-2 rounded-[3px] self-start transition-all duration-200 hover:border-[#FF6B4A] hover:text-[#FF6B4A]"
+                        className="font-mono text-[12px] text-blac dark:text-[#EDEFF2] border border-[#1F242B] px-4 py-2 rounded-[3px] self-start transition-all duration-200 hover:border-[#FF6B4A] hover:text-[#FF6B4A]"
                     >
                         View Site →
                     </a>

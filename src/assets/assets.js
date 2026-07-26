@@ -14,7 +14,7 @@ import hotel_site from './hotel-site.png'
 import whatsapp from './whatsapp.png'
 import copyright from './copyright.png'
 import up_arrow from './up-arrow.png'
-
+import sun_icon from './sun_icon.svg'
 
 
 
@@ -29,7 +29,7 @@ export const assets = {
     close_black,
     profile,
     download_icon,
-    linkedin, email, github, twitter, close_white, hotel_site, whatsapp, copyright, up_arrow
+    linkedin, email, github, twitter, close_white, hotel_site, whatsapp, copyright, up_arrow, sun_icon
 }
 
 export const projects = [

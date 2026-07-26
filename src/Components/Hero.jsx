@@ -36,7 +36,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 3, ease: "easeInOut" }}
-            className='flex flex-col items-center px-2 text-white bg-[#0B0D10] ' >
+            className='flex flex-col items-center px-8 text-black dark:text-white bg-white dark:bg-[#0B0D10] ' >
 
 
             <div className="flex flex-wrap items-center justify-center gap-2 px-2 py-1 mt-30 rounded-full border border-zinc-200">
@@ -47,20 +47,23 @@ const Hero = () => {
                     </div>
                     <p className='text-xs text-[#FF6B4A]'>Live now</p>
                 </div>
-                <p className="text-xs text-white">Available for work</p>
+                <p className="text-xs ">Available for work</p>
             </div>
             {/* <h1 className='text-5xl md:text-[70px]/18 text-center max-w-[1000px] mt-4 bg-clip-text leading-tight font-medium'>A Frontend Developer </h1> */}
+            <p className=' max-sm:text-[30px] text-[clamp(36px,7vw,92px)] max-sm:pt-10 leading-none sm:pt-7 text-[#6E7681]'>Hi there,</p>
             <HeroText />
-            <p className="text-[#6E7681] text-center sm:max-w-[500px] lg:pt-3 text-[13px] sm:text-base max-w-[300px]">
+            <p className="text-[#6E7681] text-center sm:max-w-[500px] lg:pt-3 text-[12px] sm:text-base max-w-[250px]">
                 I build modern, responsive web interfaces with React, Next.js, TypeScript, and Tailwind CSS, focused on creating clean, scalable, and user-friendly experiences.
             </p>
 
-            <div className='flex gap-4 mt-9 mb-3'>
+            <div className='flex gap-4 mt-7 mb-2'>
                 <button className="bg-[#FF6B4A]  hover:bg-[#6E7681]  text-white text-sm sm:px-6 sm:py-3  py-2 px-4 rounded-lg sm:rounded-2xl transition cursor-pointer">
                     <a href="#projects"> View Projects</a>
                 </button>
-                <button className="bg-white text-black border  hover:bg-[#6E7681] hover:text-white border-zinc-200 hover:border-none text-sm rounded-lg sm:px-5 sm:py-3 px-4 py-2 sm:rounded-2xl transition cursor-pointer">
-                    <a href="#contact"> Get in touch</a>
+                <button className="bg-white text-black border  hover:bg-[#6E7681] hover:text-white border-zinc-200 hover:border-none text-sm rounded-lg sm:px-5 sm:py-3 px-4  sm:rounded-2xl transition cursor-pointer">
+                    <a href="#contact" className="hidden md:block"> Get in touch</a>
+                    <a href="/Onakoya1.pdf" target="_blank" rel="noopener noreferrer" className=' md:hidden'> Resume</a>
+
                 </button>
             </div>
             <Links />

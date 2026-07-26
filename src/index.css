@@ -1,6 +1,7 @@
     @import "tailwindcss";
     @custom-variant hover (&:hover);
     @custom-variant group-hover (.group:hover &);
+    @custom-variant dark (&:where(.dark, .dark *));
 
     html {
         scroll-behavior: smooth;

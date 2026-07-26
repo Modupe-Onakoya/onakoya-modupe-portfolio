@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const HeroText = () => {
     const [index, setIndex] = useState(0);
 
-    const phrases = ["I'm Onakoya Modupe", "A Frontend Developer"];
+    const phrases = ["I'm, Onakoya Modupe", "A Frontend Developer"];
 
     const directions = [1, -1];
 
@@ -17,7 +17,8 @@ const HeroText = () => {
     }, []);
 
     return (
-        <div className="overflow-hidden  lg:h-[125px] relative ">
+        <div className="overflow-hidden   relative ">
+
             <AnimatePresence mode="wait">
                 <motion.h1
                     key={index}
@@ -25,11 +26,9 @@ const HeroText = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: directions[index] * 80 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="text-[clamp(36px,7vw,92px)] max-md:py-10 text-center  "
+                    className="text-[clamp(36px,7vw,92px)] max-sm:pb-10 leading-none sm:pb-5 max-sm:text-[25px] text-center   "
                 >
-                    {phrases[index] === "I'm Onakoya Modupe"
-                        ? <>I'm  <br className=" block sm:hidden" />Onakoya Modupe</>
-                        : <>A  <br className="block sm:hidden" />Frontend Developer</>
+                    {phrases[index]
                     }
                 </motion.h1>
             </AnimatePresence>

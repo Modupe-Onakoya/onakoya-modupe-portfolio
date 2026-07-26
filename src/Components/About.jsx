@@ -28,7 +28,7 @@ const About = () => {
     return (
         <div
 
-            className='px-8 sm:px-15 bg-[#0B0D10]'>
+            className='px-8 sm:px-15  bg-white dark:bg-[#0B0D10]'>
             <section
                 id="about"
                 className="py-24 border-t border-[#1F242B]  mx-auto mt-20  w-full "
@@ -64,7 +64,7 @@ const About = () => {
                                 transition={{ duration: 1 }}
                                 viewport={{ once: true }}
 
-                                key={i} className="sm:text-lg text-[#EDEFF2] mb-5 leading-relaxed">
+                                key={i} className="sm:text-lg text-black dark:text-[#EDEFF2] mb-5 leading-relaxed">
                                 {p}
                             </motion.p>
                         ))}
@@ -93,8 +93,8 @@ const About = () => {
                                 className={`flex justify-between py-3.5 border-b border-[#1F242B] font-mono text-[13px] ${i === 0 ? "border-t border-[#1F242B]" : ""
                                     }`}
                             >
-                                <span className="text-[#6E7681]">{row.role}</span>
-                                <span className="text-[#EDEFF2] text-right">{row.tools}</span>
+                                <span className="text-black dark:text-[#6E7681]">{row.role}</span>
+                                <span className="text-black dark:text-[#EDEFF2] text-right">{row.tools}</span>
                             </div>
                         ))}
                     </motion.div>

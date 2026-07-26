@@ -5,13 +5,16 @@ import Hero from "./Components/Hero"
 import Hover from "./Components/Hover"
 import Navbar from "./Components/Navbar"
 import Projects from "./Components/Projects"
-
+import { useState } from "react"
 
 function App() {
 
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : 'dark')
+
+
   return (
-    <div className="bg-[#0B0D10] pt-5  ">
-      <Navbar />
+    <div className="dg-white dark:bg-[#0B0D10] pt-5  ">
+      <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
       <About />
       <Projects />
