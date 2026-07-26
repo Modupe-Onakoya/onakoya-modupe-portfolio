@@ -26,7 +26,7 @@ const HeroText = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: directions[index] * 80 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="text-[clamp(36px,7vw,92px)] max-sm:pb-10 leading-none sm:pb-5 max-sm:text-[25px] text-center   "
+                    className="text-[clamp(36px,7vw,92px)] max-sm:pb-10 leading-none sm:pb-10 max-sm:text-[25px] text-center   "
                 >
                     {phrases[index]
                     }

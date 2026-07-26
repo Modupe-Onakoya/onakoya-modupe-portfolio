@@ -50,7 +50,7 @@ const Hero = () => {
                 <p className="text-xs ">Available for work</p>
             </div>
             {/* <h1 className='text-5xl md:text-[70px]/18 text-center max-w-[1000px] mt-4 bg-clip-text leading-tight font-medium'>A Frontend Developer </h1> */}
-            <p className=' max-sm:text-[30px] text-[clamp(36px,7vw,92px)] max-sm:pt-10 leading-none sm:pt-7 text-[#6E7681]'>Hi there,</p>
+            <p className=' max-sm:text-[30px] text-[clamp(36px,7vw,92px)] max-sm:pt-15 leading-none sm:pt-7 text-[#6E7681]'>Hi there,</p>
             <HeroText />
             <p className="text-[#6E7681] text-center sm:max-w-[500px] lg:pt-3 text-[12px] sm:text-base max-w-[250px]">
                 I build modern, responsive web interfaces with React, Next.js, TypeScript, and Tailwind CSS, focused on creating clean, scalable, and user-friendly experiences.
