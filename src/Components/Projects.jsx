@@ -14,7 +14,7 @@ const Projects = () => {
             className='px-8 sm:px-15 bg-white dark:bg-[#0B0D10]'>
             <section
                 id="projects"
-                className="py-24 border-t border-[#1F242B]  mx-auto  "
+                className="py-24 border-t border-zinc-200 dark:border-[#1F242B]  mx-auto  "
             >
                 <SectionLabel />
                 {projects.map((project) => (

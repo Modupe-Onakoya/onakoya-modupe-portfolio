@@ -6,7 +6,7 @@ const Tags = ({ tags }) => {
             {tags.map((tag) => (
                 <span
                     key={tag}
-                    className="font-mono text-[11px] text-[#5C84B5] border border-[#1F242B] px-2.5 py-1 rounded-[3px] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#5C84B5] hover:text-[#EDEFF2]"
+                    className="font-mono text-[11px] text-[#5C84B5] border border-zinc-200 dark:border-[#1F242B] px-2.5 py-1 rounded-[3px] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#5C84B5] hover:text-black dark:hover:text-[#EDEFF2]"
                 >
                     {tag}
                 </span>

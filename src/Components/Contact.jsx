@@ -10,7 +10,7 @@ const Contact = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
             className='px-8 sm:px-15 dark:bg-[#0B0D10] bg-white'>
-            <div className="py-24 border-t border-[#1F242B]  mx-auto  " id='contact'>
+            <div className="py-24 border-t border-zinc-200 dark:border-[#1F242B]  mx-auto  " id='contact'>
 
                 <h2 className=' text-[15px]  text-[#5C84B5] mb-6 flex items-baseline gap-3'>
                     Contact</h2>

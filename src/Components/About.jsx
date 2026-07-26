@@ -10,7 +10,7 @@ const About = () => {
 
     const profile = {
         aboutParagraphs: [
-            "I'm a frontend developer who enjoys turning ideas into intuitive, polished digital experiences. I value clean architecture, thoughtful design, and writing code that's easy to understand, maintain, and improve over time. Whether I'm building a landing page or a larger web application, I focus on creating solutions that balance performance, usability, and attention to detail.",
+            "I'm a frontend developer who enjoys turning ideas into intuitive, polished digital experiences. I value clean architecture, thoughtful design, and writing code that's easy to understand, maintain, and improve over time. Beyond functionality, I pay close attention to interactions and animations that make interfaces feel smooth, engaging, and intuitive. Whether I'm building a landing page or a larger web application, I focus on creating experiences that balance performance, usability, and attention to detail.",
         ],
         aboutParagraphsMuted: [
             "Beyond coding, I'm committed to continuous learning and refining my craft. I enjoy exploring modern web technologies, improving my problem-solving skills, and challenging myself with projects that push my understanding further. My goal is to build products that not only look great but also deliver meaningful, reliable experiences for the people who use them.",
@@ -31,7 +31,7 @@ const About = () => {
             className='px-8 sm:px-15  bg-white dark:bg-[#0B0D10]'>
             <section
                 id="about"
-                className="py-24 border-t border-[#1F242B]  mx-auto mt-20  w-full "
+                className="py-24 border-t border-zinc-200 dark:border-[#1F242B]  mx-auto mt-20  w-full "
             >
                 {/* Section label */}
                 <p className=" text-[15px] text-[#6E7681] mb-12 flex items-baseline gap-3">
@@ -42,7 +42,7 @@ const About = () => {
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_1.3fr_1fr] gap-8 md:gap-12 items-start">
 
                     {/* Avatar */}
-                    <div className=" w-full max-w-[220px] md:max-w-none aspect-[4/5] rounded-md overflow-hidden border border-[#1F242B] bg-[#12151A] group">
+                    <div className=" w-full max-w-[220px] md:max-w-none aspect-[4/5] rounded-md overflow-hidden border border-zinc-200 dark:border-[#1F242B] bg-[#12151A] group">
                         <motion.img
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ const About = () => {
                         {profile.stack.map((row, i) => (
                             <div
                                 key={row.role}
-                                className={`flex justify-between py-3.5 border-b border-[#1F242B] font-mono text-[13px] ${i === 0 ? "border-t border-[#1F242B]" : ""
+                                className={`flex justify-between py-3.5 border-b border-zinc-200 dark:border-[#1F242B] font-mono text-[13px] ${i === 0 ? "border-t border-[#1F242B]" : ""
                                     }`}
                             >
                                 <span className="text-black dark:text-[#6E7681]">{row.role}</span>

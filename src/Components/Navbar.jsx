@@ -52,7 +52,7 @@ const Navbar = ({ theme, setTheme }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 3, ease: "easeInOut" }}
-                className={` bg-white dark:bg-[#0B0D10] fixed flex items-center border blur-75  max-md:justify-between border-slate-700
+                className={` bg-white dark:bg-[#0B0D10] fixed flex items-center border blur-75  max-md:justify-between border-zinc-200 dark:border-slate-700
                  px-6 py-4 rounded-full text-black dark:text-white text-sm w-fit mx-auto z-100`}>
 
                 <div className="hidden md:flex items-center gap-6 ml-7 ">
@@ -83,11 +83,11 @@ const Navbar = ({ theme, setTheme }) => {
 
 
                     <button
-                        className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition">
+                        className="border border-zinc-200 dark:border-slate-600 hover:text-white hover:bg-[#6E7681] px-4 py-2 rounded-full text-sm font-medium transition">
                         <a href="/Onakoya1.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                     </button>
                     <button
-                        className="dark:bg-white bg-black text-white dark:text-black hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-100 transition duration-300">
+                        className="dark:bg-white bg-black text-white dark:text-black hover:shadow-[0px_0px_30px_14px] shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-[#FF6B4A] dark:hover:bg-slate-100 transition duration-300">
                         <a href="mailto:onakoyamodupe0@gmail.com">
                             Lets work
                         </a>
@@ -105,7 +105,7 @@ const Navbar = ({ theme, setTheme }) => {
                         </svg>
                     </button>
                     <button
-                        className=" bg-[#FF6B4A]  text-white dark:text-black dark:bg-white my-auto hover:shadow-[0px_0px_30px_14px] md:hidden shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-2 py-1 rounded-lg text-sm font-medium hover:bg-slate-100 transition duration-300">
+                        className=" bg-[#FF6B4A]  text-white dark:text-black dark:bg-white my-auto hover:shadow-[0px_0px_30px_14px] md:hidden shadow-[0px_0px_30px_7px] hover:shadow-white/50 shadow-white/50 text-black px-2 py-1 rounded-lg text-sm font-medium dark:hover:bg-slate-100 transition duration-300">
                         <a href="mailto:onakoyamodupe0@gmail.com">
                             Lets work
                         </a>
@@ -132,7 +132,7 @@ const Navbar = ({ theme, setTheme }) => {
                     </a>
 
                     <button
-                        className="border border-slate-600 hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition ">
+                        className="border border-zinc-200  hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition ">
                         <a href="/Onakoya1.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 
                     </button>
