@@ -2,12 +2,12 @@ import React from 'react'
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 
+const phrases = ["I'm Onakoya Modupe", "A Frontend Developer"];
+const directions = [1, -1];
+
 const HeroText = () => {
     const [index, setIndex] = useState(0);
-
-    const phrases = ["I'm, Onakoya Modupe", "A Frontend Developer"];
-
-    const directions = [1, -1];
+    const distance = window.innerWidth < 640 ? 40 : 80;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -22,9 +22,9 @@ const HeroText = () => {
             <AnimatePresence mode="wait">
                 <motion.h1
                     key={index}
-                    initial={{ opacity: 0, x: directions[index] * -80 }}
+                    initial={{ opacity: 0, x: directions[index] * -distance }}
                     animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: directions[index] * 80 }}
+                    exit={{ opacity: 0, x: directions[index] * distance }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                     className="text-[clamp(36px,7vw,92px)]  leading-none pb-5 max-sm:text-[24px] text-center   "
                 >
