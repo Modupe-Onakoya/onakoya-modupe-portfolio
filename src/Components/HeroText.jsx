@@ -7,7 +7,7 @@ const directions = [1, -1];
 
 const HeroText = () => {
     const [index, setIndex] = useState(0);
-    const distance = window.innerWidth < 640 ? 40 : 80;
+    const distance = window.innerWidth < 640 ? 10 : 80;
 
     useEffect(() => {
         const interval = setInterval(() => {

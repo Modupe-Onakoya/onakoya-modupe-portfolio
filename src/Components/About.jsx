@@ -2,27 +2,29 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import { div } from 'motion/react-client';
 import { motion } from 'motion/react'
+
+
+const profile = {
+    aboutParagraphs: [
+        "I'm a frontend developer who enjoys turning ideas into intuitive, polished digital experiences. I value clean architecture, thoughtful design, and writing code that's easy to understand, maintain, and improve over time. Beyond functionality, I pay close attention to interactions and animations that make interfaces feel smooth, engaging, and intuitive. Whether I'm building a landing page or a larger web application, I focus on creating experiences that balance performance, usability, and attention to detail.",
+    ],
+    aboutParagraphsMuted: [
+        "Beyond coding, I'm committed to continuous learning and refining my craft. I enjoy exploring modern web technologies, improving my problem-solving skills, and challenging myself with projects that push my understanding further. My goal is to build products that not only look great but also deliver meaningful, reliable experiences for the people who use them.",
+    ],
+    stack: [
+        { role: "interface", tools: "React, TypeScript" },
+        { role: "styling", tools: "Tailwind CSS" },
+        { role: "framework", tools: "Next.js" },
+        { role: "markup", tools: "Semantic HTML5" },
+        { role: "tooling", tools: "Git, Vite, ESLint, Framer Motion" },
+    ],
+};
+
 const About = () => {
 
 
 
 
-
-    const profile = {
-        aboutParagraphs: [
-            "I'm a frontend developer who enjoys turning ideas into intuitive, polished digital experiences. I value clean architecture, thoughtful design, and writing code that's easy to understand, maintain, and improve over time. Beyond functionality, I pay close attention to interactions and animations that make interfaces feel smooth, engaging, and intuitive. Whether I'm building a landing page or a larger web application, I focus on creating experiences that balance performance, usability, and attention to detail.",
-        ],
-        aboutParagraphsMuted: [
-            "Beyond coding, I'm committed to continuous learning and refining my craft. I enjoy exploring modern web technologies, improving my problem-solving skills, and challenging myself with projects that push my understanding further. My goal is to build products that not only look great but also deliver meaningful, reliable experiences for the people who use them.",
-        ],
-        stack: [
-            { role: "interface", tools: "React, TypeScript" },
-            { role: "styling", tools: "Tailwind CSS" },
-            { role: "framework", tools: "Next.js" },
-            { role: "markup", tools: "Semantic HTML5" },
-            { role: "tooling", tools: "Git, Vite, ESLint" },
-        ],
-    };
 
 
     return (
