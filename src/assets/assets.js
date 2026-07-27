@@ -39,7 +39,7 @@ export const projects = [
         role: "Personal project",
         title: "Hotel Booking Site",
         desc: "An internal analytics dashboard with real-time filtering and virtualized tables for large datasets.",
-        tags: ["React", "TypeScript", "Tailwind"],
+        tags: ["React", "Tailwind"],
         href: "https://hotel-booking-site-beta.vercel.app/",
         image: assets.hotel_site,
     }

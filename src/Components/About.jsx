@@ -16,7 +16,7 @@ const profile = {
         { role: "styling", tools: "Tailwind CSS" },
         { role: "framework", tools: "Next.js" },
         { role: "markup", tools: "Semantic HTML5" },
-        { role: "tooling", tools: "Git, Vite, ESLint, Framer Motion" },
+        { role: "tooling", tools: "Git & Github, Vite, Framer Motion" },
     ],
 };
 

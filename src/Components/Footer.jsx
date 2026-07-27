@@ -28,7 +28,7 @@ const Footer = () => {
                     <a href="#about" className="text-black dark:text-[#6E7681]">About</a>
                     <a href="#project" className="text-black dark:text-[#6E7681]">Project</a>
                     <a href="#contact" className="text-black dark:text-[#6E7681]">Contact</a>
-                    <a href="/Onakoya1.pdf" className="text-black dark:text-[#6E7681]">Resume</a>
+                    <a href="/Onakoya cv.pdf" className="text-black dark:text-[#6E7681]">Resume</a>
 
                 </div>
 

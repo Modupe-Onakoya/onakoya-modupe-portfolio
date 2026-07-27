@@ -66,7 +66,7 @@ const Hero = () => {
                 </button>
                 <button className="bg-white text-black border  hover:bg-[#6E7681] hover:text-white border-zinc-200 hover:border-none text-sm rounded-lg sm:px-5 sm:py-3 px-4  sm:rounded-2xl transition cursor-pointer">
                     <a href="#contact" className="hidden md:block"> Get in touch</a>
-                    <a href="/Onakoya1.pdf" target="_blank" rel="noopener noreferrer" className=' md:hidden'> Resume</a>
+                    <a href="/Onakoya cv.pdf" target="_blank" rel="noopener noreferrer" className=' md:hidden'> Resume</a>
 
                 </button>
             </div>

@@ -1,5 +1,10 @@
 # Portfolio Website
 
+![Portfolio Screenshot](./screenshots/portfolio-home.png)
+
+## Live Demo
+https://onakoya-modupe-portfolio.vercel.app/
+
 ## Overview
 A modern, responsive portfolio showcasing my projects, skills, and experience as a frontend developer.
 
@@ -12,12 +17,8 @@ A modern, responsive portfolio showcasing my projects, skills, and experience as
 
 ## Tech Stack
 - React
-- TypeScript
 - Tailwind CSS
 - Framer Motion
-
-## Live Demo
-https://...
 
 ## Installation
 
