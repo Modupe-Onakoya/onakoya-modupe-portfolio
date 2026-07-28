@@ -17,7 +17,7 @@ const HeroText = () => {
     }, []);
 
     return (
-        <div className="overflow-hidden relative max-sm:pb-10">
+        <div className="overflow-hidden relative ">
 
             <AnimatePresence mode="wait">
                 <motion.h1
