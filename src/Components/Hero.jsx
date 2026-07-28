@@ -56,7 +56,7 @@ const Hero = () => {
                 <HeroText />
             </div>
 
-            <p className="text-[#6E7681] text-center sm:max-w-[500px] lg:pt-3 text-[12px] sm:text-base max-w-[250px]">
+            <p className="text-[#6E7681] text-center sm:max-w-[500px] lg:pt-3 text-[14px] sm:text-base max-w-[250px]">
                 I build modern, responsive web interfaces with React, Next.js, TypeScript, and Tailwind CSS, focused on creating clean, scalable, and user-friendly experiences.
             </p>
 
