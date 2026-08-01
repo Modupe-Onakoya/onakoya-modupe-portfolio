@@ -37,7 +37,7 @@ const About = () => {
             >
                 {/* Section label */}
                 <p className=" text-[15px] text-[#6E7681] mb-12 flex items-baseline gap-3">
-                    <span className="text-[#5C84B5]">About Me</span>
+                    <span className="text-[#5C84B5]">About Me & Tech Stack</span>
                 </p>
 
                 {/* Three column grid */}

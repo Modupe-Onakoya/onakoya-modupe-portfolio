@@ -66,6 +66,11 @@ const Navbar = ({ theme, setTheme }) => {
                         <span
                             className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">About</span>
                     </a>
+                    <a href="#about" className="relative overflow-hidden h-6 group">
+                        <span className="block group-hover:-translate-y-full transition-transform duration-300">Tech Stack</span>
+                        <span
+                            className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Tech Stack</span>
+                    </a>
                     <a href="#projects" className="relative overflow-hidden h-6 group">
                         <span className="block group-hover:-translate-y-full transition-transform duration-300">Project</span>
                         <span
@@ -124,6 +129,9 @@ const Navbar = ({ theme, setTheme }) => {
                     <a className="hover:text-indigo-600" href="#about" onClick={() => setIsOpen(!isOpen)}>
                         About
                     </a>
+                    <a className="hover:text-indigo-600" href="#about" onClick={() => setIsOpen(!isOpen)}>
+                        Tech Stack
+                    </a>
                     <a className="hover:text-indigo-600" href="#projects" onClick={() => setIsOpen(!isOpen)}>
                         Projects
                     </a>
@@ -132,7 +140,7 @@ const Navbar = ({ theme, setTheme }) => {
                     </a>
 
                     <button
-                        className="border border-zinc-200  hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition ">
+                        className="border border-zinc-200  hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition shadow-md ">
                         <a href="/Onakoya cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 
                     </button>
