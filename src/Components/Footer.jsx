@@ -26,6 +26,8 @@ const Footer = () => {
                 <div className=" flex space-x-3 text-[13px]">
                     <a href="#" className="text-black dark:text-[#6E7681]">Home</a>
                     <a href="#about" className="text-black dark:text-[#6E7681]">About</a>
+                    <a href="#about" className="text-black dark:text-[#6E7681]">Stack</a>
+
                     <a href="#project" className="text-black dark:text-[#6E7681]">Project</a>
                     <a href="#contact" className="text-black dark:text-[#6E7681]">Contact</a>
                     <a href="/Onakoya cv.pdf" className="text-black dark:text-[#6E7681]">Resume</a>
