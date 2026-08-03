@@ -5,7 +5,7 @@ const Links = () => {
     return (
         <div className='flex gap-2 pt-5 '>
             <a
-                href="https://wa.me/2348012345678"
+                href="https://wa.me/2349066291370"
                 target="_blank"
                 rel="noreferrer"
                 className='hover:-translate-y-2 bg-white/70 dark:bg-[#6E7681] hover:bg-[#FF6B4A] h-fit rounded-full p-2 shadow-sm'

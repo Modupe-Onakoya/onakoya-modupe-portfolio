@@ -36,7 +36,7 @@ const Footer = () => {
 
                 <div className='flex gap-3 pt-2 items-center'>
                     <a
-                        href="https://wa.me/2348012345678"
+                        href="https://wa.me/2349066291370"
                         target="_blank"
                         rel="noreferrer"
                         className='hover:-translate-y-2  shadow-lg   bg-white/70 dark:bg-[#6E7681] hover:bg-[#FF6B4A]  rounded-full p-2'
