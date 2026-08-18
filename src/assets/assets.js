@@ -38,11 +38,22 @@ export const projects = [
         year: "2026",
         role: "Personal project",
         title: "Hotel Booking Site",
+        desc: "Hotel booking site.",
+        tags: ["React", "Tailwind"],
+        href: "https://hotel-booking-site-beta.vercel.app/",
+        image: assets.hotel_site,
+    },
+    {
+        index: "02",
+        year: "2026",
+        role: "Personal project",
+        title: "Sneakers sales store",
         desc: "An internal analytics dashboard with real-time filtering and virtualized tables for large datasets.",
         tags: ["React", "Tailwind"],
         href: "https://hotel-booking-site-beta.vercel.app/",
         image: assets.hotel_site,
     }
+
     // {
     //     index: "02",
     //     year: "2025",
