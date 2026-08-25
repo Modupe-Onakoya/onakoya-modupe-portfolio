@@ -15,7 +15,7 @@ import whatsapp from './whatsapp.png'
 import copyright from './copyright.png'
 import up_arrow from './up-arrow.png'
 import sun_icon from './sun_icon.svg'
-
+import nike_shoe from './nike-shoe3.jpg'
 
 
 
@@ -29,7 +29,7 @@ export const assets = {
     close_black,
     profile,
     download_icon,
-    linkedin, email, github, twitter, close_white, hotel_site, whatsapp, copyright, up_arrow, sun_icon
+    linkedin, email, github, twitter, close_white, hotel_site, whatsapp, copyright, up_arrow, sun_icon, nike_shoe
 }
 
 export const projects = [
@@ -38,20 +38,20 @@ export const projects = [
         year: "2026",
         role: "Personal project",
         title: "Hotel Booking Site",
-        desc: "Hotel booking site.",
+        desc: " A booking interface with destination search, date selection,and guest management.  ",
         tags: ["React", "Tailwind"],
         href: "https://hotel-booking-site-beta.vercel.app/",
-        image: assets.hotel_site,
+        image: hotel_site,
     },
     {
         index: "02",
         year: "2026",
         role: "Personal project",
-        title: "Sneakers sales store",
-        desc: "An internal analytics dashboard with real-time filtering and virtualized tables for large datasets.",
+        title: "Sneak Lovers — Multi-Brand Footwear E-commerce Platform",
+        desc: "An ecommerce platform built for a retail shoes sales store that deals with sales of different shoe brands",
         tags: ["React", "Tailwind"],
-        href: "https://hotel-booking-site-beta.vercel.app/",
-        image: assets.hotel_site,
+        href: "https://foot-wares.vercel.app/",
+        image: nike_shoe,
     }
 
     // {

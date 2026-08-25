@@ -140,7 +140,7 @@ const Navbar = ({ theme, setTheme }) => {
                     </a>
 
                     <button
-                        className="border border-zinc-200  hover:bg-slate-800 px-4 py-2 rounded-full text-sm font-medium transition shadow-md ">
+                        className="border border-zinc-200  hover:bg-slate-800 px-4 py-2 rounded-full text-sm z-10 font-medium transition shadow-md ">
                         <a href="/Onakoya cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 
                     </button>
