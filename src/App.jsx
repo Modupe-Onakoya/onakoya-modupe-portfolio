@@ -1,11 +1,11 @@
 import About from "./Components/About"
 import Contact from "./Components/Contact"
-import Footer from "./Components/Footer"
 import Hero from "./Components/Hero"
-import Hover from "./Components/Hover"
 import Navbar from "./Components/Navbar"
 import Projects from "./Components/Projects"
 import { useState } from "react"
+import Stack from "./Components/Stack"
+import Experience from "./Components/Experience"
 
 function App() {
 
@@ -17,9 +17,11 @@ function App() {
       <Navbar theme={theme} setTheme={setTheme} />
       <Hero />
       <About />
+      <Stack />
       <Projects />
+      <Experience />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

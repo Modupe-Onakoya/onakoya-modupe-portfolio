@@ -32,13 +32,14 @@ export const assets = {
     linkedin, email, github, twitter, close_white, hotel_site, whatsapp, copyright, up_arrow, sun_icon, nike_shoe
 }
 
+
 export const projects = [
     {
         index: "01",
         year: "2026",
         role: "Personal project",
         title: "Hotel Booking Site",
-        desc: " A booking interface with destination search, date selection,and guest management.  ",
+        desc: "A booking interface with destination search, date selection, and guest management.",
         tags: ["React", "Tailwind"],
         href: "https://hotel-booking-site-beta.vercel.app/",
         image: hotel_site,
@@ -48,30 +49,10 @@ export const projects = [
         year: "2026",
         role: "Personal project",
         title: "Sneak Lovers — Multi-Brand Footwear E-commerce Platform",
-        desc: "An ecommerce platform built for a retail shoes sales store that deals with sales of different shoe brands",
+        desc: "An ecommerce platform built for a retail shoes sales store, which deals with sales of different shoe brands",
         tags: ["React", "Tailwind"],
         href: "https://foot-wares.vercel.app/",
         image: nike_shoe,
     }
 
-    // {
-    //     index: "02",
-    //     year: "2025",
-    //     role: "Freelance",
-    //     title: "Lumen Studio Site",
-    //     desc: "Marketing site for a design studio built with Next.js. 98+ Lighthouse score across the board.",
-    //     tags: ["Next.js", "Contentful", "Framer Motion"],
-    //     href: "#",
-    //     image: "https://placehold.co/600x400/12151A/FF6B4A?text=Project+2",
-    // },
-    // {
-    //     index: "03",
-    //     year: "2025",
-    //     role: "Open source",
-    //     title: "formly",
-    //     desc: "A lightweight headless form-validation library for React — schema-based, under 4kb gzipped.",
-    //     tags: ["React", "TypeScript", "Vite"],
-    //     href: "#",
-    //     image: "https://placehold.co/600x400/12151A/3ddc84?text=Project+3",
-    // },
 ];

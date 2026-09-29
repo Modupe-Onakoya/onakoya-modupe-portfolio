@@ -1,80 +1,128 @@
-import React from 'react'
-import { useState, useRef, useEffect } from 'react'
-import HeroText from './HeroText'
-import Links from './Links'
-import { motion } from 'motion/react'
-const Hero = () => {
-    const [mobileOpen, setMobileOpen] = useState(false)
-    const dashboardRef = useRef(null)
+import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
+
+const NAME = "Onakoya Modupe";
+const ROLE = "Frontend Developer";
+
+export default function Hero({ onNavigate }) {
+    const typedNameRef = useRef(null);
+    const typedRoleRef = useRef(null);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (dashboardRef.current) {
-                const scrolled = window.scrollY;
-                // Calculate progress from 0 to 1 over 400px of scrolling (slower, smoother)
-                const progress = Math.min(1, scrolled / 400);
+        const prefersReduced = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
 
-                const tilt = 15 * (1 - progress);
-                const scale = 0.95 + (0.05 * progress);
-                // mt-7 is 28px, mt-12 is 48px
-                const marginTop = 28 + (20 * progress);
+        if (prefersReduced) {
+            if (typedNameRef.current) typedNameRef.current.textContent = NAME;
+            if (typedRoleRef.current) typedRoleRef.current.textContent = ROLE;
+            return;
+        }
 
-                dashboardRef.current.style.transform = `perspective(1000px) rotateX(${tilt}deg) scale(${scale})`;
-                dashboardRef.current.style.marginTop = `${marginTop}px`;
-            }
+        let cancelled = false;
+
+        function typeInto(el, text, speed, cursorAfter) {
+            return new Promise((resolve) => {
+                if (!el) return resolve();
+                let i = 0;
+                el.textContent = "";
+                let cursor = null;
+                if (cursorAfter) {
+                    cursor = document.createElement("span");
+                    cursor.className = "inline-block w-[10px] h-[1.1em] bg-accent align-text-bottom animate-blink ml-[2px]";
+                    el.appendChild(cursor);
+                }
+                function step() {
+                    if (cancelled) return resolve();
+                    if (i < text.length) {
+                        const char = text.charAt(i);
+                        if (cursorAfter && cursor) {
+                            el.insertBefore(document.createTextNode(char), cursor);
+                        } else {
+                            el.textContent += char;
+                        }
+                        i += 1;
+                        setTimeout(step, speed);
+                    } else {
+                        resolve();
+                    }
+                }
+                step();
+            });
+        }
+
+        (async () => {
+            await typeInto(typedNameRef.current, NAME, 55, false);
+            if (cancelled) return;
+            await typeInto(typedRoleRef.current, ROLE, 30, true);
+        })();
+
+        return () => {
+            cancelled = true;
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-
-
-
     return (
-
-        <motion.header
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3, ease: "easeInOut" }}
-            className='flex flex-col items-center px-8 text-black dark:text-white bg-white dark:bg-[#0B0D10] ' >
-
-
-            <div className="flex flex-wrap items-center justify-center gap-2 px-2 py-1 mt-30 rounded-full border border-zinc-200">
-                <div className='flex items-center gap-2 border border-zinc-200 rounded-full px-2 py-1.5'>
-                    <div className="relative flex size-3.5 items-center justify-center">
-                        <span className="absolute inline-flex h-full w-full rounded-full bg-[#FF6B4A] opacity-75 animate-ping duration-300"></span>
-                        <span className="relative inline-flex size-2 rounded-full bg-[#FF6B4A]"></span>
+        <motion.section className="px-6 pt-30 pb-18"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+            <div className="max-w-[880px] mx-auto">
+                <div className="dark:bg-surface border border-zinc-300 dark:border-border rounded-md shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
+                    <div className="flex items-center gap-2 px-3.5 py-2.5 dark:bg-surface2 border-b border-zinc-300 dark:border-border">
+                        <span className="w-2.5 h-2.5 rounded-full bg-del" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#E8A33D]" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-add" />
+                        <span className="ml-2 font-mono text-xs text-[#0F172A] dark:text-faint">zsh — whoami</span>
                     </div>
-                    <p className='text-xs text-[#FF6B4A]'>Live now</p>
+
+                    <div className="px-6 pt-7 pb-8 font-mono">
+                        <div className="text-dim text-sm mb-1.5">
+                            <span className="text-add">➜</span> ~ whoami
+                        </div>
+                        <div
+                            ref={typedNameRef}
+                            className="text-[clamp(32px,6vw,56px)] text-[#0F172A] font-extrabold dark:text-ink my-2 min-h-[1.2em]"
+                        />
+                        <div
+                            ref={typedRoleRef}
+                            className="text-[clamp(15px,2.2vw,18px)] text-accent font-medium"
+                        />
+                    </div>
                 </div>
-                <p className="text-xs ">Available for work</p>
+
+                <p className="max-w-[60ch] mt-6 dark:text-dim text-[15px] font-sans text-[#64748B]">
+                    I build intuitive, responsive web experiences that combine thoughtful design, clean architecture,
+                    and smooth interactions. I enjoy turning complex ideas into simple, functional products while
+                    continuously looking for ways to improve the user experience.
+                    {/* <strong className="text-ink">Company Name</strong>. Based in City, Country. */}
+                </p>
+
+                <div className="flex flex-wrap gap-3 mt-7">
+                    <a
+                        href="#work"
+
+                        className="font-mono text-[13px] font-bold px-[18px] py-2.5 rounded-md bg-accent text-[#F2F6FF] border border-accent transition-transform hover:-translate-y-0.5"
+                    >
+                        View work
+                    </a>
+                    <a
+                        href="/Onakoya cv.pdf"
+                        className="font-mono text-[13px] px-[18px] py-2.5 rounded-md text-[#0F172A] dark:text-dim border border-zinc-300 dark:border-border transition-colors hover:text-ink hover:border-dim"
+                    >
+                        Download résumé
+                    </a>
+                    <a
+                        href="#contact"
+
+                        className="font-mono text-[13px] px-[18px] py-2.5 rounded-md text-[#0F172A] dark:text-dim border border-zinc-300 dark:border-border transition-colors hover:text-ink hover:border-dim"
+                    >
+                        Get in touch
+                    </a>
+                </div>
             </div>
-            <div className=''>
-
-                {/* <h1 className='text-5xl md:text-[70px]/18 text-center max-w-[1000px] mt-4 bg-clip-text leading-tight font-medium'>A Frontend Developer </h1> */}
-                <p className=' max-sm:text-[30px] text-[clamp(36px,7vw,92px)] text-center  leading-none pt-5 sm:pt-7 text-[#6E7681]'>Hi there,</p>
-                <HeroText />
-            </div>
-
-            <p className="text-[#6E7681] text-center sm:max-w-[500px] lg:pt-3 text-[14px] sm:text-base max-w-[250px]">
-                I build modern, responsive web interfaces with React, Next.js, TypeScript, and Tailwind CSS, focused on creating clean, scalable, and user-friendly experiences.
-            </p>
-
-            <div className='flex gap-4 mt-7 mb-2'>
-                <button className="bg-[#FF6B4A]  hover:bg-[#6E7681]  text-white text-sm sm:px-6 sm:py-3  py-2 px-4 rounded-lg sm:rounded-2xl transition cursor-pointer">
-                    <a href="#projects"> View Projects</a>
-                </button>
-                <button className="bg-white text-black border  hover:bg-[#6E7681] hover:text-white border-zinc-200 hover:border-none text-sm rounded-lg sm:px-5 sm:py-3 px-4  sm:rounded-2xl transition cursor-pointer">
-                    <a href="#contact" className="hidden md:block"> Get in touch</a>
-                    <a href="/Onakoya cv.pdf" target="_blank" rel="noopener noreferrer" className=' md:hidden'> Resume</a>
-
-                </button>
-            </div>
-            <Links />
-
-
-        </motion.header >
-    )
+        </motion.section>
+    );
 }
-
-export default Hero

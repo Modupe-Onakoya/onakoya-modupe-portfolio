@@ -1,8 +1,35 @@
     @import "tailwindcss";
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
     @custom-variant hover (&:hover);
     @custom-variant group-hover (.group:hover &);
     @custom-variant dark (&:where(.dark, .dark *));
 
     html {
         scroll-behavior: smooth;
+    }
+
+
+    @theme {
+        --color-bg: #0B0D10;
+        --color-surface: #14181D;
+        --color-surface2: #191E24;
+        --color-border: #232830;
+        --color-ink: #E8E6E1;
+        --color-dim: #8B92A0;
+        --color-faint: #545C68;
+        --color-accent: #1F6FEB;
+        --color-add: #3FB950;
+        --color-del: #F85149;
+
+        --font-mono: "JetBrains Mono", monospace;
+        --font-sans: "Inter", sans-serif;
+
+        --animate-blink: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
     }
