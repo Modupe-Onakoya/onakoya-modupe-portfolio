@@ -145,7 +145,7 @@ const Navbar = ({ theme, setTheme }) => {
                     href="/Onakoya cv.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-zinc-200 text-[#0F172A] dark:border-border hover:border-zinc-400 dark:hover:border-dim px-4 py-2 rounded-full text-sm font-mono transition mt-2"
+                    className="border border-zinc-300  dark:border-border hover:border-zinc-400 dark:hover:border-dim px-4 py-2 rounded-full text-sm font-mono transition mt-2"
                     onClick={() => setIsOpen(false)}
                 >
                     Resume

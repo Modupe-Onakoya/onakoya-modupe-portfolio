@@ -36,7 +36,7 @@ export default function Work() {
                                         {p.role}
                                     </span>
                                     <span className="font-mono text-[11px] text-faint">
-                                        {p.index} — {p.year}
+                                        {p.index}
                                     </span>
                                 </div>
 

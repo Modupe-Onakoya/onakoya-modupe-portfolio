@@ -16,6 +16,7 @@ import copyright from './copyright.png'
 import up_arrow from './up-arrow.png'
 import sun_icon from './sun_icon.svg'
 import nike_shoe from './nike-shoe3.jpg'
+import solar_img from './hero.jpg'
 
 
 
@@ -36,21 +37,28 @@ export const assets = {
 export const projects = [
     {
         index: "01",
-        year: "2026",
+        role: "Personal project",
+        title: "Solar Ecommerce Site",
+        desc: "A full-stack solar energy platform that helps Nigerian homeowners calculate electricity savings, explore solar systems, and manage their energy journey.",
+        tags: ["Next js", "TypeScript", "Supabase", "Tailwind CSS"],
+        href: "https://solara-energy-34sy.vercel.app/",
+        image: solar_img,
+    },
+    {
+        index: "02",
         role: "Personal project",
         title: "Hotel Booking Site",
         desc: "A booking interface with destination search, date selection, and guest management.",
-        tags: ["React", "Tailwind"],
+        tags: ["React js", "Tailwind CSS"],
         href: "https://hotel-booking-site-beta.vercel.app/",
         image: hotel_site,
     },
     {
-        index: "02",
-        year: "2026",
+        index: "03",
         role: "Personal project",
         title: "Sneak Lovers — Multi-Brand Footwear E-commerce Platform",
         desc: "An ecommerce platform built for a retail shoes sales store, which deals with sales of different shoe brands",
-        tags: ["React", "Tailwind"],
+        tags: ["React js", "Tailwind CSS"],
         href: "https://foot-wares.vercel.app/",
         image: nike_shoe,
     }
