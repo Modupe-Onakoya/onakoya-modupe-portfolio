@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 
 
@@ -32,49 +33,222 @@ const IconMail = (props) => (
     </svg>
 );
 
+const CONTACT_INFO = {
+    email: "onakoyamodupe0@gmail.com",
+    location: "Ibadan, Nigeria",
+};
 
-const LINKS = [
-    { href: "mailto:onakoyamodupe0@gmail.com", label: "Email", Icon: IconMail },
+const SOCIALS = [
     { href: "https://github.com/Modupe-Onakoya", label: "GitHub", Icon: IconGithub },
     { href: "https://www.linkedin.com/in/modupe-onakoya", label: "LinkedIn", Icon: IconLinkedin },
     { href: "https://twitter.com/@dhuks__", label: "X", Icon: IconX },
     { href: "https://wa.me/2349066291370", label: "WhatsApp", Icon: IconWhatsapp },
 ];
-
+const STATUS = {
+    IDLE: "idle",
+    SENDING: "sending",
+    SUCCESS: "success",
+    ERROR: "error",
+};
 export default function Contact() {
+    const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+    function handleChange(e) {
+        setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+    }
+
+    const [status, setStatus] = useState(STATUS.IDLE);
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setStatus(STATUS.SENDING);
+
+        const formData = new FormData(event.target);
+        formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                setStatus(STATUS.SUCCESS);
+                setForm({ name: "", email: "", message: "" });
+            } else {
+                setStatus(STATUS.ERROR);
+            }
+        } catch {
+            setStatus(STATUS.ERROR);
+        }
+
+        setTimeout(() => setStatus(STATUS.IDLE), 4000);
+    };
+
     return (
-        <motion.footer
+        <motion.section
+            id="contact"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-
-            id="contact" className="px-6 pt-14 pb-20 border-t border-zinc-300 dark:border-border">
+            className="px-6 py-16 border-t border-zinc-200 dark:border-border"
+        >
             <div className="max-w-[880px] mx-auto">
-                <div className="font-mono text-[15px] text-dim">
+                <div className="font-mono text-[15px] text-[#64748B] dark:text-dim mb-9">
                     <span className="text-add">➜</span>{" "}
                     <span className="text-accent">~/contact</span> cat reach_me.txt
                 </div>
 
-                <div className="flex items-center gap-5 mt-6 flex-wrap">
-                    {LINKS.map(({ href, label, Icon }) => (
-                        <a
-                            key={label}
-                            href={href}
-                            target={href.startsWith("mailto:") ? undefined : "_blank"}
-                            rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                            aria-label={label}
-                            className="text-dim hover:text-accent transition-colors"
-                        >
-                            <Icon className="w-[18px] h-[18px]" />
-                        </a>
-                    ))}
-                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Left column */}
+                    <div className="flex flex-col gap-6">
+                        <div className="bg-white dark:bg-surface border border-zinc-200 dark:border-border rounded-md p-6">
+                            <h3 className="font-sans font-bold text-base text-[#0F172A] dark:text-ink mb-5">
+                                Contact Information
+                            </h3>
 
-                <p className="mt-10 font-mono text-xs text-faint">
-                    © {new Date().getFullYear()} Onakoya Modupe. Built from scratch, deployed with intent.
-                </p>
+                            <div className="flex items-center gap-3 mb-4">
+                                <span className="flex items-center justify-center w-9 h-9 rounded-md bg-zinc-100 dark:bg-surface2 text-accent shrink-0">
+                                    <IconMail className="w-4 h-4" />
+                                </span>
+                                <div>
+                                    <div className="font-mono text-[11px] text-[#64748B] dark:text-faint">Email</div>
+                                    <a
+                                        href={`mailto:${CONTACT_INFO.email}`}
+                                        className="text-sm text-[#0F172A] dark:text-ink hover:text-accent transition-colors"
+                                    >
+                                        {CONTACT_INFO.email}
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <span className="flex items-center justify-center w-9 h-9 rounded-md bg-zinc-100 dark:bg-surface2 text-accent shrink-0">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                                        <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div className="font-mono text-[11px] text-[#64748B] dark:text-faint">Location</div>
+                                    <div className="text-sm text-[#0F172A] dark:text-ink">{CONTACT_INFO.location}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-white dark:bg-surface border border-zinc-200 dark:border-border rounded-md p-6">
+                            <h3 className="font-sans font-bold text-base text-[#0F172A] dark:text-ink mb-5">
+                                Connect with me
+                            </h3>
+                            <div className="flex items-center gap-4 flex-wrap">
+                                {SOCIALS.map(({ href, label, Icon }) => (
+                                    <a
+                                        key={label}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={label}
+                                        className="flex items-center gap-2 border border-zinc-200 dark:border-border rounded-md px-3 py-2 text-[#64748B] dark:text-dim hover:text-accent hover:border-accent transition-colors font-mono text-xs"
+                                    >
+                                        <Icon className="w-4 h-4" />
+                                        {label}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right column: form */}
+                    <div className="bg-white dark:bg-surface border border-zinc-200 dark:border-border rounded-md p-6">
+                        <h3 className="font-sans font-bold text-lg text-[#0F172A] dark:text-ink mb-1">
+                            Drop me a message
+                        </h3>
+                        <p className="text-[#64748B] dark:text-dim text-sm mb-6">
+                            I'll get back to you as soon as possible.
+                        </p>
+
+                        <form onSubmit={onSubmit} className="flex flex-col gap-5">
+                            <div>
+                                <label className="block font-mono text-[11px] text-[#64748B] dark:text-faint mb-2">
+                                    Full Name
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-zinc-100 dark:bg-surface2 border border-zinc-200 dark:border-border rounded-md px-4 py-2.5 text-sm text-[#0F172A] dark:text-ink placeholder:text-zinc-400 dark:placeholder:text-faint focus:outline-none focus:border-accent transition-colors"
+                                    placeholder="Your full name"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block font-mono text-[11px] text-[#64748B] dark:text-faint mb-2">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-zinc-100 dark:bg-surface2 border border-zinc-200 dark:border-border rounded-md px-4 py-2.5 text-sm text-[#0F172A] dark:text-ink placeholder:text-zinc-400 dark:placeholder:text-faint focus:outline-none focus:border-accent transition-colors"
+                                    placeholder="your.email@example.com"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block font-mono text-[11px] text-[#64748B] dark:text-faint mb-2">
+                                    Message
+                                </label>
+                                <textarea
+                                    name="message"
+                                    value={form.message}
+                                    onChange={handleChange}
+                                    required
+                                    rows={5}
+                                    className="w-full bg-zinc-100 dark:bg-surface2 border border-zinc-200 dark:border-border rounded-md px-4 py-2.5 text-sm text-[#0F172A] dark:text-ink placeholder:text-zinc-400 dark:placeholder:text-faint focus:outline-none focus:border-accent transition-colors resize-none"
+                                    placeholder="Tell me about your project..."
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={status === STATUS.SENDING}
+                                className="self-start flex items-center gap-2 bg-accent text-[#F2F6FF] font-mono text-sm px-5 py-2.5 rounded-md hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                            >
+                                {status === STATUS.SENDING ? (
+                                    <>
+                                        <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8V0C5.37 0 0 5.37 0 12h4Z" />
+                                        </svg>
+                                        Sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                                            <path d="m22 2-7 20-4-9-9-4Z" />
+                                            <path d="M22 2 11 13" />
+                                        </svg>
+                                        Send Message
+                                    </>
+                                )}
+                            </button>
+
+                            {status === STATUS.SUCCESS && (
+                                <p className="font-mono text-sm text-add">✓ Message sent successfully — I'll get back to you soon!</p>
+                            )}
+                            {status === STATUS.ERROR && (
+                                <p className="font-mono text-sm text-del">✗ Something went wrong. Try emailing me directly.</p>
+                            )}
+                        </form>
+                    </div>
+                </div>
             </div>
-        </motion.footer>
+        </motion.section>
     );
 }

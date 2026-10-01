@@ -23,7 +23,7 @@ export default function Stack() {
             <div className="max-w-[880px] mx-auto">
                 <div className="flex items-baseline gap-3 mb-9">
                     <span className="font-mono text-xs text-faint">02</span>
-                    <h2 className="text-[22px] font-bold text-[#0F172A] dark:text-ink">Stack</h2>
+                    <h2 className="text-[22px] font-bold text-[#0F172A] dark:text-ink">Tech Stack</h2>
                 </div>
 
                 <div className="dark:bg-surface border border-zinc-300 dark:border-border rounded-md shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden">

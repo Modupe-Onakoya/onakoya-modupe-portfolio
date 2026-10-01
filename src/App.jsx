@@ -1,11 +1,13 @@
+import { useState } from "react"
+
 import About from "./Components/About"
 import Contact from "./Components/Contact"
 import Hero from "./Components/Hero"
 import Navbar from "./Components/Navbar"
 import Projects from "./Components/Projects"
-import { useState } from "react"
 import Stack from "./Components/Stack"
 import Experience from "./Components/Experience"
+import Footer from "./Components/Footer"
 
 function App() {
 
@@ -21,7 +23,7 @@ function App() {
       <Projects />
       <Experience />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
